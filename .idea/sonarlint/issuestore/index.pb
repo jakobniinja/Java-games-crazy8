@@ -25,3 +25,5 @@ W
 'src/main/java/com/jakobniinja/HAnd.java,c\5\c59bbd94f6a153be8719e4bb868e2287a6061f78
 W
 'src/main/java/com/jakobniinja/Hand.java,0\1\01c9f2b1699d76414d97452ae9f2facb5ae94006
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

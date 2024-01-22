@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class Hand {
 
-  private ArrayList<Card> cards = new ArrayList<>();
-
+  private ArrayList<Card> cards = new ArrayList<Card>();
 
   public void add(Card card) {
     int index = 0;
@@ -52,16 +51,17 @@ public class Hand {
   public Card cardAt(int i) {
     return cards.get(i);
   }
-
   public int size() {
     return cards.size();
   }
 
-  @Override
   public String toString() {
     String string = "";
     for (int i = 0; i < cards.size(); i++) {
       Card card = cards.get(i);
+// if this is not the first card, compare it with the
+// previous card. If the suits are different add a
+// couple extra spaces
       if (i > 0) {
         Card priorCard = cards.get(i - 1);
         char priorSuit = priorCard.getSuit();

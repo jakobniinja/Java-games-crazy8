@@ -10,22 +10,6 @@ public class Card {
 
   private static final String SUITS = "HDCS";
 
-  public Card(String rs) {
-    if (rs.length() == 2) {
-      char r = rs.charAt(0);
-      char s = rs.charAt(1);
-      int ri = RANKS.indexOf(r);
-      int si = RANKS.indexOf(s);
-
-      if (ri > -1 && si > -1) {
-        rank = r;
-        suit = s;
-      }
-    }
-
-    rank = RANKS.charAt(0);
-    suit = SUITS.charAt(1);
-  }
 
   public Card(int id) {
     id = id % 52;
@@ -35,6 +19,19 @@ public class Card {
 
     rank = RANKS.charAt(id % 13);
     suit = SUITS.charAt(id / 13);
+  }
+
+  public Card(String rs) {
+    if (rs.length() == 2) {
+      char r = rs.charAt(0);
+      char s = rs.charAt(1);
+      int ri = RANKS.indexOf(r);
+      int si = SUITS.indexOf(s);
+      if (ri > -1 && si > -1) {
+        rank = r;
+        suit = s;
+      }
+    }
   }
 
   public char getRank() {
@@ -48,20 +45,16 @@ public class Card {
   public boolean isValid() {
     boolean valid = false;
     if (suit != ' ') {
-      return true;
-
+      valid = true;
     }
     return valid;
-
   }
-
   public boolean equals(Card card) {
     boolean equals = false;
-    if ((card.getSuit() == suit) && (card.getRank() == rank)) {
+    if ((card.getSuit()==suit) && (card.getRank()==rank)) {
       equals = true;
     }
     return equals;
-
   }
 
   public boolean isGreaterThan(Card card) {
@@ -70,7 +63,8 @@ public class Card {
     char cardRank = card.getRank();
     if (SUITS.indexOf(suit) > SUITS.indexOf(cardSuit)) {
       greaterThan = true;
-    } else if (suit == cardSuit) {
+    }
+    else if(suit==cardSuit) {
       if (RANKS.indexOf(rank) > RANKS.indexOf(cardRank)) {
         greaterThan = true;
       }
@@ -80,15 +74,17 @@ public class Card {
 
   public static boolean isValidSuit(char c) {
     boolean valid = false;
-    if (SUITS.indexOf(c) > -1) {
+    if (SUITS.indexOf(c)>-1) {
       valid = true;
     }
     return valid;
   }
 
-  @Override
+
+
   public String toString() {
     String rs = "" + rank + suit;
     return rs;
   }
+
 }
