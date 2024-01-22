@@ -1,0 +1,5 @@
+
+Š
+java:S1319%"hThe type of "newCards" should be an interface such as "List" rather than the implementation "ArrayList".(Á„èóúÿÿÿÿ8ÔÓù…Ó1
+~
+java:S1488!"\Immediately return this expression instead of assigning it to the temporary variable "card".(ÈÕªüÿÿÿÿ8‹Î÷…Ó1
