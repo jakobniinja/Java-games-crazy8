@@ -5,9 +5,9 @@ import java.util.Random;
 
 public class Deck {
 
-  private ArrayList<Card> cards = new ArrayList<Card>();
+  private ArrayList<Card> cards = new ArrayList<>();
 
-  private Random rand = new Random();
+  private final Random rand = new Random();
 
   public Deck() {
     for (int i = 0; i < 52; i++) {
@@ -18,7 +18,7 @@ public class Deck {
   }
 
   public void shuffle() {
-    ArrayList<Card> shuffled = new ArrayList<Card>();
+    ArrayList<Card> shuffled = new ArrayList<>();
     int numberOfTimes = cards.size();
     for (int i = 0; i < numberOfTimes; i++) {
       int deckSize = cards.size();
@@ -30,8 +30,7 @@ public class Deck {
   }
 
   public Card deal(){
-    Card card = cards.remove(0);
-    return card;
+    return cards.remove(0);
   }
   public void reuse(ArrayList<Card> newCards) {
     cards = newCards;
@@ -40,13 +39,11 @@ public class Deck {
     return cards.size();
   }
 
-
   public String toString() {
-    String deckString = "";
-    for (int i = 0; i < cards.size(); i++) {
-      Card card = cards.get(i);
-      deckString += card + " ";
+    StringBuilder deckString = new StringBuilder();
+    for (Card card : cards) {
+      deckString.append(card).append(" ");
     }
-    return deckString;
+    return deckString.toString();
   }
 }

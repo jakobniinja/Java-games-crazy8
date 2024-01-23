@@ -1,23 +1,11 @@
 
-{
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¨±Ïüÿÿÿÿ8©ëí”Ó1
-|
-java:S2293×"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÛÏÎ„øÿÿÿÿ8©ëí”Ó1
-w
-java:S2293Ø"YReplace the type specification in this constructor call with the diamond operator ("<>").(«ãÊ¥8©ëí”Ó1
-e
-java:S1192J"HDefine a constant instead of duplicating this literal " cards." 3 times.(µ©Ï8©ëí”Ó1
-y
-java:S1192£"VDefine a constant instead of duplicating this literal " cannot be played on " 3 times.(Ýù”üÿÿÿÿ8ªëí”Ó1
 ~
-java:S1488\"\Immediately return this expression instead of assigning it to the temporary variable "card".(¤æª‰üÿÿÿÿ8ªëí”Ó1
+java:S1488`"\Immediately return this expression instead of assigning it to the temporary variable "card".(¤æª‰üÿÿÿÿ8ªëí”Ó1
 ¨
-java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(ÕçþŽûÿÿÿÿ8¬ëí”Ó1
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(ÕçþŽûÿÿÿÿ8¬ëí”Ó1
 c
-java:S1854Ï"@Remove this useless assignment to local variable "highestCount".(àµâŒúÿÿÿÿ8„íí”Ó1
+java:S1854Ó"@Remove this useless assignment to local variable "highestCount".(àµâŒúÿÿÿÿ8„íí”Ó1
 p
-java:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(àÀ½£8…íí”Ó1
-H	java:S106Ö"+Replace this use of System.out by a logger.(†ÍÚ¾8†íí”Ó1
-D	java:S131æ""Add a default case to this switch.(¶ÚŒ±úÿÿÿÿ8†íí”Ó1
-\
-java:S1155">Use isEmpty() to check whether the collection is empty or not.(ºãð¼8ˆíí”Ó1
+java:S3776Ù"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(àÀ½£8…íí”Ó1
+H	java:S106Ú"+Replace this use of System.out by a logger.(†ÍÚ¾8†íí”Ó1
+D	java:S131ê""Add a default case to this switch.(¶ÚŒ±úÿÿÿÿ8†íí”Ó1

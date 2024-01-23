@@ -5,6 +5,10 @@ import java.util.Random;
 
 public class CrazyEights extends MyWindow {
 
+  private static final String CANNOT_BE_PLAYED_ON = " cannot be played on ";
+
+  private static final String CARDS = " cards.";
+
   private Deck deck = new Deck();
 
   private Hand myHand = new Hand();
@@ -13,9 +17,9 @@ public class CrazyEights extends MyWindow {
 
   private Card discard;
 
-  private ArrayList<Card> discardPile = new ArrayList<Card>();
+  private ArrayList<Card> discardPile = new ArrayList<>();
 
-  private Random rand = new Random();
+  private final Random rand = new Random();
 
   private char activeSuit = ' ';
 
@@ -71,9 +75,9 @@ public class CrazyEights extends MyWindow {
     print();
     // who played all their cards?
     if (myHand.size() == 0) {
-      print("Congratulations! You won! The computer still had " + computerHand.size() + " cards.");
+      print("Congratulations! You won! The computer still had " + computerHand.size() + CARDS);
     } else {
-      print("Sorry, you lost. You still had " + myHand.size() + " cards.");
+      print("Sorry, you lost. You still had " + myHand.size() + CARDS);
       print("My Hand: " + myHand);
       print("Discard: " + discard);
     }
@@ -95,7 +99,7 @@ public class CrazyEights extends MyWindow {
 
   private void showStatus() {
     print();
-    print("Computer has " + computerHand.size() + " cards.");
+    print("Computer has " + computerHand.size() + CARDS);
     print("My Hand: " + myHand);
     print("Discard: " + discard);
     if (discard.getRank() == '8') {
@@ -129,7 +133,7 @@ public class CrazyEights extends MyWindow {
     boolean validPlay = false;
     // repeat until a valid play has been entered
     while (!validPlay) {
-      String rankSuit = promptForString("Which card do you want to play (or D to draw)?");
+      String rankSuit = promptForString();
       rankSuit = rankSuit.toUpperCase();
       // if draw, draw a card
       if (rankSuit.equals("D")) {
@@ -160,7 +164,7 @@ public class CrazyEights extends MyWindow {
     }
     // does the discard match the rank or suit?
     else if ((card.getSuit() != discard.getSuit()) && (card.getRank() != discard.getRank())) {
-      print(rankSuit + " cannot be played on " + discard + ".");
+      print(rankSuit + CANNOT_BE_PLAYED_ON + discard + ".");
       validPlay = false;
     } else if (!myHand.contains(card)) {
       print(rankSuit + " is not in your hand.");
@@ -173,14 +177,14 @@ public class CrazyEights extends MyWindow {
       if (discard.getRank() == '8') {
         // does the card match the active suit?
         if (card.getSuit() != activeSuit) {
-          print(rankSuit + " cannot be played on " + discard + " because the suit was set to " + activeSuit);
+          print(rankSuit + CANNOT_BE_PLAYED_ON + discard + " because the suit was set to " + activeSuit);
           validPlay = false;
         }
       }
       // if the discard is not an 8,
       // does the discard match the rank or suit?
       else if (card.getSuit() != discard.getSuit() && card.getRank() != discard.getRank()) {
-        print(rankSuit + " cannot be played on " + discard);
+        print(rankSuit + CANNOT_BE_PLAYED_ON + discard);
         validPlay = false;
       }
     }
@@ -212,8 +216,8 @@ public class CrazyEights extends MyWindow {
 
   private void playComputerCard() {
     System.out.println("Computer hand: " + computerHand);
-    ArrayList<Card> playableCards = new ArrayList<Card>();
-    ArrayList<Card> eights = new ArrayList<Card>();
+    ArrayList<Card> playableCards = new ArrayList<>();
+    ArrayList<Card> eights = new ArrayList<>();
     countHearts = 0;
     countDiamonds = 0;
     countClubs = 0;
@@ -266,7 +270,7 @@ public class CrazyEights extends MyWindow {
       discardComputerCard(playedCard);
     }
     // otherwise, if have an eight, play an eight
-    else if (eights.size() > 0) {
+    else if (!eights.isEmpty()) {
       Card playedCard = eights.get(0);
       discardComputerCard(playedCard);
     }
@@ -283,20 +287,6 @@ public class CrazyEights extends MyWindow {
       }
     }
   }
-
-  private char promptForSuit() {
-    char suit = ' ';
-    boolean validSuit = false;
-    while (!validSuit) {
-      suit = promptForChar("Change the suit to H, D, C, or S?");
-      suit = Character.toUpperCase(suit);
-      if (Card.isValidSuit(suit)) {
-        validSuit = true;
-      }
-    }
-    return suit;
-  }
-
 
   public static void main(String[] args) {
     new CrazyEights();

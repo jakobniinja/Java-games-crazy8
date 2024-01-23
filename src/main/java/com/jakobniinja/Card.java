@@ -34,27 +34,8 @@ public class Card {
     }
   }
 
-  public char getRank() {
-    return rank;
-  }
-
-  public char getSuit() {
-    return suit;
-  }
-
   public boolean isValid() {
-    boolean valid = false;
-    if (suit != ' ') {
-      valid = true;
-    }
-    return valid;
-  }
-  public boolean equals(Card card) {
-    boolean equals = false;
-    if ((card.getSuit()==suit) && (card.getRank()==rank)) {
-      equals = true;
-    }
-    return equals;
+    return suit != ' ';
   }
 
   public boolean isGreaterThan(Card card) {
@@ -63,8 +44,7 @@ public class Card {
     char cardRank = card.getRank();
     if (SUITS.indexOf(suit) > SUITS.indexOf(cardSuit)) {
       greaterThan = true;
-    }
-    else if(suit==cardSuit) {
+    } else if (suit == cardSuit) {
       if (RANKS.indexOf(rank) > RANKS.indexOf(cardRank)) {
         greaterThan = true;
       }
@@ -73,18 +53,22 @@ public class Card {
   }
 
   public static boolean isValidSuit(char c) {
-    boolean valid = false;
-    if (SUITS.indexOf(c)>-1) {
-      valid = true;
-    }
-    return valid;
+    return SUITS.indexOf(c) > -1;
   }
 
+  public char getRank() {
+    return rank;
+  }
 
+  public char getSuit() {
+    return suit;
+  }
 
   public String toString() {
-    String rs = "" + rank + suit;
-    return rs;
+    return "" + rank + suit;
   }
 
+  public boolean equals(Card card) {
+    return (card.getSuit() == suit) && (card.getRank() == rank);
+  }
 }

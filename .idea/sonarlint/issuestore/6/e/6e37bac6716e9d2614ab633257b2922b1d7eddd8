@@ -1,11 +1,3 @@
 
-v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(•²åš8Ø»Ş“Ó1
-v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğè¸©8£Ìã“Ó1
 Š
-java:S1319$"hThe type of "newCards" should be an interface such as "List" rather than the implementation "ArrayList".(Á„èóúÿÿÿÿ8ÿ¦ç“Ó1
->
-java:S16430"Use a StringBuilder instead.(óÛ¸¦ıÿÿÿÿ8Ó•à“Ó1
-~
-java:S1488!"\Immediately return this expression instead of assigning it to the temporary variable "card".(ÈÕªüÿÿÿÿ8ó€æ“Ó1
+java:S1319#"hThe type of "newCards" should be an interface such as "List" rather than the implementation "ArrayList".(Á„èóúÿÿÿÿ8ôÛ½¯Ó1
